@@ -2,5 +2,5 @@
 
 ## 教程列表
 
-+ [Java 8教程](/java8/README.md)
++ [Java 8教程](/java8/)
 
