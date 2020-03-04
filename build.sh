@@ -9,7 +9,6 @@ function build_dir {
     gitbook build
     popd
 }
-cp README.md ./home/README.md
 build_dir java8
 build_dir home
 
