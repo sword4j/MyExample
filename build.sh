@@ -16,7 +16,7 @@ build_dir home
 TARGET_DIR=_book
 
 mkdir ${TARGET_DIR}
-rm -rf ${TARGET_DIR}/*
+rm -rf ${TARGET_DIR}/!\(CNAME\)
 
 cp -r ./home/_book/* ${TARGET_DIR}/
 
