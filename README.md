@@ -1,6 +1,6 @@
 <div align="center"><h1>MyExample</h1></div>
 
-## 教程列表
+## 全部示例
 
-+ [Java 8教程](/java8/)
+### Java 8
 
