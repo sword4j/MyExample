@@ -12,7 +12,7 @@ function build_dir {
 build_dir java8
 build_dir home
 
-TARGET_DIR=_book
+TARGET_DIR=docs
 
 mkdir ${TARGET_DIR}
 rm -rf ${TARGET_DIR}/!\(CNAME\)
