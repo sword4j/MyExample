@@ -1,0 +1,10 @@
+{
+    "title": "目录",
+    "plugins" : [
+        "-fontsettings",
+        "-search",
+        "-lunr",
+        "-highlight",
+        "-sharing"
+    ]
+}
