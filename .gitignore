@@ -1,4 +1,4 @@
-/node_modules/
+**/node_modules/
 /home/README.md
 /home/_layouts/
 /home/_book/
