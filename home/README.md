@@ -1,5 +1,5 @@
 <div align="center"><h1>MyExample</h1></div>
 
-## 全部示例
+## 教程列表
 
-+ [Java8示例](http://www.myexample.cc/java8/index.html)
++ [Java8](http://www.myexample.cc/java8/index.html)
