@@ -5,6 +5,7 @@
     "-lunr",
     "-highlight",
     "-sharing",
+    "-search",
     "anchors",
     "ga",
     "prism",
