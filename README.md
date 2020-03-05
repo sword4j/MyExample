@@ -1,5 +1,5 @@
 <div align="center"><h1>MyExample</h1></div>
-
+<div align="center"><img src="home/images/qrcode.jpg" /></div>
 ## 教程列表
 ### Java8
 + 函数式接口
