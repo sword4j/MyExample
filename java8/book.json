@@ -6,7 +6,6 @@
     "-highlight",
     "-sharing",
     "-search",
-    "anchors",
     "ga",
     "prism",
     "prism-themes",
