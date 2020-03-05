@@ -14,9 +14,7 @@ public interface Function<T, R> {
 + T - 输入参数的类型。
 + R - 返回结果的类型。
 
-## 实例
-
-### 实例1：接受一个字符串作为参数并返回它的长度作为结果
+## 实例1：接受一个字符串作为参数并返回它的长度作为结果
 
 **MyExample1.java**
 
@@ -39,7 +37,7 @@ public class MyExample1 {
 9
 ```
 
-### 实例2：使用`andThen()`串联`Function`
+## 实例2：使用`andThen()`串联`Function`
 
 **MyExample2.java**
 
@@ -65,7 +63,7 @@ public class MyExample2 {
 18
 ```
 
-### 实例3：把List转为Map
+## 实例3：把List转为Map
 
 该实例演示了基于`List<String>`创建一个Map用于保存字符串与字符串长度的映射。
 
@@ -111,7 +109,7 @@ public class MyExample3 {
 {node=4, c++=3, java=4, javascript=10}
 ```
 
-### 实例4：把List转为List
+## 实例4：把List转为List
 
 该实例演示了把Function作为参数传递，通过Function计算String的SHA256消息摘要。
 
