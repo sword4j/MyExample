@@ -6,15 +6,11 @@
     "-highlight",
     "-sharing",
     "-search",
-    "ga",
     "prism",
     "prism-themes",
     "hints"
   ],
   "pluginsConfig": {
-    "ga": {
-      "token": ""
-    },
     "prism": {
       "css": [
         "prism-themes/themes/prism-base16-ateliersulphurpool.light.css"
