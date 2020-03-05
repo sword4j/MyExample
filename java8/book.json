@@ -1,0 +1,31 @@
+{
+  "title": "Java8教程",
+  "plugins" : [
+    "-fontsettings",
+    "-lunr",
+    "-highlight",
+    "-sharing",
+    "anchors",
+    "ga",
+    "prism",
+    "prism-themes",
+    "hints"
+  ],
+  "pluginsConfig": {
+    "ga": {
+      "token": ""
+    },
+    "prism": {
+      "css": [
+        "prism-themes/themes/prism-base16-ateliersulphurpool.light.css"
+      ],
+      "lang": {
+        "objc": "objectivec",
+        "shell": "bash",
+        "text": "textile",
+        "plain": "textile"
+      }
+    }
+  }
+}
+
