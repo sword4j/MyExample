@@ -4,6 +4,7 @@ function build_dir {
     DIR="$1"
     pushd $DIR
     rsync -rv ../_layouts/ ./_layouts/
+    rm -rf _book
     gitbook init
     gitbook install
     gitbook build
