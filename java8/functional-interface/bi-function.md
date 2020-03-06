@@ -98,7 +98,7 @@ public class Java8BiFunction2a {
 Result : 16.0
 ```
 
-封装一下BiFunction与Function的组合逻辑使其变得更“通用”：
+我们来封装一下BiFunction与Function的组合逻辑使其变得更“通用”：
 
 ```java
 public static <A1, A2, R1, R2> R2 convert(A1 a1, A2 a2,
@@ -110,7 +110,7 @@ public static <A1, A2, R1, R2> R2 convert(A1 a1, A2 a2,
 }
 ```
 
-下面的代码演示了如何使用上面`convert`函数。
+下面的代码演示了如何使用上面的`convert`函数。
 
 **Java8BiFunction2c.java**
 
