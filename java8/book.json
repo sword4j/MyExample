@@ -13,7 +13,7 @@
   "pluginsConfig": {
     "prism": {
       "css": [
-        "prism-themes/themes/prism-base16-ateliersulphurpool.light.css"
+        "prism-themes/themes/prism-cb.css"
       ],
       "lang": {
         "objc": "objectivec",
