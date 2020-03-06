@@ -16,4 +16,3 @@
   + Java 8 Consumer的使用方法及实例
   + Java 8 BiConsumer的使用方法及实例
   + Java 8 Supplier的使用方法及实例
->>>>>>> update java8
