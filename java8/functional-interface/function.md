@@ -116,7 +116,7 @@ public class MyExample3 {
 **MyExample4.java**
 
 ```java
-package com.mkyong;
+package cc.myexample;
 
 import org.apache.commons.codec.digest.DigestUtils;
 
