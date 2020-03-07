@@ -44,9 +44,9 @@ public class Java8Predicate {
 ```
 
 ## 实例2：使用Predicate.and()组合两个Predicate
-`Predicate.and()`对两个独立的`Predicate`使用逻辑与关系进行组合。
+`Predicate.and()`方法可以对两个独立的`Predicate`使用逻辑与关系进行组合。
 
-先来看一下不使用`Predicate.and()`怎么做。
+先来看一下不使用`Predicate.and()`的情况。
 
 下面的代码可以过滤出列表中大于5但是小于8的数字：
 
@@ -80,7 +80,7 @@ public class Java8Predicate2 {
 [6, 7]
 ```
 
-再来看下使用`Predicate.and()`怎么做。
+再来看一下如何使用`Predicate.and()`方法。
 
 下面的代码过滤出列表中大于5但是小于8的数字：
 
@@ -122,7 +122,7 @@ public class Java8Predicate2 {
 ```
 
 ## 实例3：使用Predicate.or()组合两个Predicate
-`Predicate.and()`对两个独立的`Predicate`使用逻辑或关系进行组合。
+`Predicate.and()`方法对两个独立的`Predicate`使用逻辑或关系进行组合。
 
 下面的代码可以找出列表中长度等于3或者以“A”开头的字符串：
 
@@ -164,7 +164,7 @@ public class Java8Predicate3 {
 
 ## 实例4：使用Predicate.negate()对Predicate取反
 
-`Predicate.negate()`可以对一个`Predicate`实现逻辑取反的效果。
+`Predicate.negate()`方法可以对一个`Predicate`实现逻辑取反的效果。
 
 下面的代码可以找出列表中不是以“A”开头的字符串。
 
