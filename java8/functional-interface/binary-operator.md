@@ -1,3 +1,5 @@
+## Java 8 BinaryOperator的使用方法及实例
+
 在Java8中[BinaryOperator](https://docs.oracle.com/javase/8/docs/api/java/util/function/BinaryOperator.html)是一个函数式接口，它继承自[BiFunction](bi-function.md)。
 
 BinaryOperator可以接受两个类型为T的参数，返回一个类型为T的结果。
