@@ -1,0 +1,466 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Java 8 UnaryOperator的使用方法及实例 · Java8教程|MyExample</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="MyExample(www.myexample.cc)提供了一些基础的编程实例供大家参考。">
+        <meta name="generator" content="GitBook 3.2.3">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-material-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-hints/plugin-hints.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="predicate.html" />
+    
+    
+    <link rel="prev" href="binary-operator.html" />
+    
+
+        <style>
+            body {
+                padding-top: 50px;
+            }
+        </style>
+        <script>
+            var _hmt = _hmt || [];
+            (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?88388b021ff2e288e0786a51654aa339";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+    </head>
+    <body>
+        <nav class="navbar navbar-default navbar-inverse navbar-fixed-top" style="border-raduis: 0; margin-bottom: 0px">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://www.myexample.cc">MyExample</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/java8/index.html">Java8</a></li>
+                </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Java8教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">函数式接口</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="function.html">
+            
+                <a href="function.html">
+            
+                    
+                    Java 8 Function的使用方法及实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="bi-function.html">
+            
+                <a href="bi-function.html">
+            
+                    
+                    Java 8 BiFunction的使用方法及实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="binary-operator.html">
+            
+                <a href="binary-operator.html">
+            
+                    
+                    Java 8 BinaryOperator的使用方法及实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.4" data-path="unary-operator.html">
+            
+                <a href="unary-operator.html">
+            
+                    
+                    Java 8 UnaryOperator的使用方法及实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="predicate.html">
+            
+                <a href="predicate.html">
+            
+                    
+                    Java 8 Predicate的使用方法及实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="bi-predicate.html">
+            
+                <a href="bi-predicate.html">
+            
+                    
+                    Java 8 BiPredicate的使用方法及实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="consumer.html">
+            
+                <a href="consumer.html">
+            
+                    
+                    Java 8 Consumer的使用方法及实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" >
+            
+                <span>
+            
+                    
+                    Java 8 BiConsumer的使用方法及实例
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" >
+            
+                <span>
+            
+                    
+                    Java 8 Supplier的使用方法及实例
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Java 8 UnaryOperator的使用方法及实例</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="java-8-predicate&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x53CA;&#x5B9E;&#x4F8B;">Java 8 Predicate&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x53CA;&#x5B9E;&#x4F8B;</h1>
+<p>&#x5728;Java8&#x4E2D;&#xFF0C;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/UnaryOperator.html" target="_blank">UnaryOperator</a>&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x5F0F;&#x63A5;&#x53E3;&#xFF0C;&#x5B83;&#x7EE7;&#x627F;&#x81EA;<a href="function.html">Function</a>&#x3002;</p>
+<p>&#x987E;&#x540D;&#x601D;&#x4E49;<code>UnaryOperator</code>&#x662F;&#x4E00;&#x4E2A;&#x201C;&#x4E00;&#x5143;&#x64CD;&#x4F5C;&#x7B26;&#x201D;&#xFF0C;&#x5B83;&#x53EA;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x4E0E;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x4E00;&#x6837;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
+<p><strong>UnaryOperator.java</strong></p>
+<pre class="language-"><code class="lang-java"><span class="token annotation punctuation">@FunctionalInterface</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">UnaryOperator</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token keyword">extends</span> <span class="token class-name">Function</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">,</span> <span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x76F8;&#x6BD4;&#x4E4B;&#x4E0B;&#xFF0C;<code>Function</code>&#x5219;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x4EFB;&#x610F;&#x7C7B;&#x578B;&#x7684;&#x53C2;&#x6570;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x4EFB;&#x610F;&#x7C7B;&#x578B;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
+<p><strong>Function.java</strong></p>
+<pre class="language-"><code class="lang-java"><span class="token annotation punctuation">@FunctionalInterface</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Function</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">,</span> <span class="token class-name">R</span><span class="token punctuation">&gt;</span></span> <span class="token punctuation">{</span>
+    <span class="token class-name">R</span> <span class="token function">apply</span><span class="token punctuation">(</span><span class="token class-name">T</span> t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x8FDB;&#x4E00;&#x6B65;&#x9605;&#x8BFB;&#xFF1A;<a href="function.html">Java 8 Function&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x53CA;&#x5B9E;&#x4F8B;</a></p>
+<h2 id="&#x5B9E;&#x4F8B;1&#xFF1A;&#x4F7F;&#x7528;unaryoperator&#x66FF;&#x6362;function">&#x5B9E;&#x4F8B;1&#xFF1A;&#x4F7F;&#x7528;UnaryOperator&#x66FF;&#x6362;Function</h2>
+<p>&#x5F53;Function&#x7684;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x4E0E;&#x8FD4;&#x56DE;&#x503C;&#x7684;&#x7C7B;&#x578B;&#x4E00;&#x81F4;&#x65F6;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;UnaryOperator&#x66FF;&#x6362;Function&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>UnaryOperator<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Integer</span><span class="token punctuation">&gt;</span></span></code>&#x66FF;&#x6362;<code>Function<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Integer,</span> <span class="token attr-name">Integer</span><span class="token punctuation">&gt;</span></span></code>&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x7684;&#x7A0B;&#x5E8F;&#x7528;&#x4E8E;&#x8BA1;&#x7B97;2 * x&#xFF1A;</p>
+<p><strong>Java8UnaryOperator1.java</strong></p>
+<pre class="language-"><code>package cc.myexample;
+
+import java.util.function.Function;
+import java.util.function.UnaryOperator;
+
+public class Java8UnaryOperator1 {
+
+    public static void main(String[] args) {
+
+        // &#x4F7F;&#x7528;Function
+        Function<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Integer,</span> <span class="token attr-name">Integer</span><span class="token punctuation">&gt;</span></span> func = x -&gt; x * 2;
+
+        Integer result = func.apply(2);
+
+        System.out.println(result);         // 4
+
+        // &#x4F7F;&#x7528;UnaryOperator
+        UnaryOperator<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Integer</span><span class="token punctuation">&gt;</span></span> func2 = x -&gt; x * 2;
+
+        Integer result2 = func2.apply(2);
+
+        System.out.println(result2);        // 4
+
+    }
+
+}
+</code></pre><p><strong>&#x8F93;&#x51FA;</strong></p>
+<pre class="language-"><code>4
+4
+</code></pre><h2 id="&#x5B9E;&#x4F8B;2&#xFF1A;unaryoperator&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x9012;">&#x5B9E;&#x4F8B;2&#xFF1A;UnaryOperator&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x9012;</h2>
+<p>&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x6F14;&#x793A;&#x4E86;&#x628A;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x90FD;&#x4E58;&#x4E0A;2&#xFF1A;</p>
+<p><strong>Java8UnaryOperator2.java</strong></p>
+<pre class="language-"><code>package cc.myexample;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.UnaryOperator;
+
+public class Java8UnaryOperator2 {
+
+    public static void main(String[] args) {
+
+        List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Integer</span><span class="token punctuation">&gt;</span></span> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+        // &#x628A;list&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x4E58;&#x4E0A;2
+        List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Integer</span><span class="token punctuation">&gt;</span></span> result = math(list, x -&gt; x * 2);
+
+        System.out.println(result); // [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+
+    }
+
+    public static <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>T</span><span class="token punctuation">&gt;</span></span> List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>T</span><span class="token punctuation">&gt;</span></span> math(List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>T</span><span class="token punctuation">&gt;</span></span> list, UnaryOperator<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>T</span><span class="token punctuation">&gt;</span></span> uo) {
+        List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>T</span><span class="token punctuation">&gt;</span></span> result = new ArrayList&lt;&gt;();
+        for (T t : list) {
+            result.add(uo.apply(t));
+        }
+        return result;
+    }
+
+}
+</code></pre><p><strong>&#x8F93;&#x51FA;</strong></p>
+<pre class="language-"><code>[2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+</code></pre><h2 id="&#x5B9E;&#x4F8B;3&#xFF1A;&#x4E32;&#x8054;unaryoperator">&#x5B9E;&#x4F8B;3&#xFF1A;&#x4E32;&#x8054;UnaryOperator</h2>
+<p>&#x4E0E;<a href="function.html">Function</a>&#x4E00;&#x6837;&#xFF0C;<code>UnaryOperator</code>&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>andThen()</code>&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x4E32;&#x8054;&#x3002;</p>
+<p>&#x5047;&#x8BBE;&#x5B58;&#x5728;&#x4E0B;&#x9762;&#x4E24;&#x4E2A;UnaryOperator&#xFF1A;</p>
+<ul>
+<li>UnaryOperator<integer> uo = x -&gt; x * 2;</integer></li>
+<li>UnaryOperator<integer> u2 = x -&gt; x + 1;</integer></li>
+</ul>
+<p>&#x5219;<code>uo.andThen(uo2).apply(3)</code>&#x76F8;&#x5F53;&#x4E8E;<code>u2.apply(uo.apply(3))</code>&#xFF0C;&#x5373;&#x8BA1;&#x7B97;3 * 2 + 1&#x3002;</p>
+<p><strong>Java8UnaryOperator3.java</strong></p>
+<pre class="language-"><code>package cc.myexample;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.UnaryOperator;
+
+public class Java8UnaryOperator3 {
+
+    public static void main(String[] args) {
+
+        List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Integer</span><span class="token punctuation">&gt;</span></span> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+        // &#x5148;&#x8BA1;&#x7B97;x * 2&#x518D;&#x628A;&#x7ED3;&#x679C;&#x52A0;&#x4E0A;1
+        List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Integer</span><span class="token punctuation">&gt;</span></span> result = math(list,
+                x -&gt; x * 2,
+                x -&gt; x + 1);
+
+        System.out.println(result); // [3, 5, 7, 9, 11, 13, 15, 17, 19, 21]
+
+    }
+
+    public static <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>T</span><span class="token punctuation">&gt;</span></span> List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>T</span><span class="token punctuation">&gt;</span></span> math(List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>T</span><span class="token punctuation">&gt;</span></span> list,
+                                   UnaryOperator<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>T</span><span class="token punctuation">&gt;</span></span> uo, UnaryOperator<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>T</span><span class="token punctuation">&gt;</span></span> uo2) {
+        List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>T</span><span class="token punctuation">&gt;</span></span> result = new ArrayList&lt;&gt;();
+        for (T t : list) {
+            result.add(uo.andThen(uo2).apply(t));
+        }
+        return result;
+    }
+
+}
+</code></pre><p><strong>&#x8F93;&#x51FA;</strong></p>
+<pre class="language-"><code>[3, 5, 7, 9, 11, 13, 15, 17, 19, 21]
+</code></pre>
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="binary-operator.html" class="navigation navigation-prev " aria-label="Previous page: Java 8 BinaryOperator的使用方法及实例">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="predicate.html" class="navigation navigation-next " aria-label="Next page: Java 8 Predicate的使用方法及实例">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Java 8 UnaryOperator的使用方法及实例","level":"2.4","depth":1,"next":{"title":"Java 8 Predicate的使用方法及实例","level":"2.5","depth":1,"path":"functional-interface/predicate.md","ref":"functional-interface/predicate.md","articles":[]},"previous":{"title":"Java 8 BinaryOperator的使用方法及实例","level":"2.3","depth":1,"path":"functional-interface/binary-operator.md","ref":"functional-interface/binary-operator.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-lunr","-highlight","-sharing","-search","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-material-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java8教程","gitbook":"*"},"file":{"path":"functional-interface/unary-operator.md","mtime":"2020-03-07T03:53:15.255Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-07T06:02:54.192Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+
+        <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    </body>
+</html>
+

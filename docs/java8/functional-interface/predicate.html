@@ -1,0 +1,566 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Java 8 Predicate的使用方法及实例 · Java8教程|MyExample</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="MyExample(www.myexample.cc)提供了一些基础的编程实例供大家参考。">
+        <meta name="generator" content="GitBook 3.2.3">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-material-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-hints/plugin-hints.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="bi-predicate.html" />
+    
+    
+    <link rel="prev" href="unary-operator.html" />
+    
+
+        <style>
+            body {
+                padding-top: 50px;
+            }
+        </style>
+        <script>
+            var _hmt = _hmt || [];
+            (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?88388b021ff2e288e0786a51654aa339";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+    </head>
+    <body>
+        <nav class="navbar navbar-default navbar-inverse navbar-fixed-top" style="border-raduis: 0; margin-bottom: 0px">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://www.myexample.cc">MyExample</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/java8/index.html">Java8</a></li>
+                </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Java8教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">函数式接口</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="function.html">
+            
+                <a href="function.html">
+            
+                    
+                    Java 8 Function的使用方法及实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="bi-function.html">
+            
+                <a href="bi-function.html">
+            
+                    
+                    Java 8 BiFunction的使用方法及实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="binary-operator.html">
+            
+                <a href="binary-operator.html">
+            
+                    
+                    Java 8 BinaryOperator的使用方法及实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="unary-operator.html">
+            
+                <a href="unary-operator.html">
+            
+                    
+                    Java 8 UnaryOperator的使用方法及实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.5" data-path="predicate.html">
+            
+                <a href="predicate.html">
+            
+                    
+                    Java 8 Predicate的使用方法及实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="bi-predicate.html">
+            
+                <a href="bi-predicate.html">
+            
+                    
+                    Java 8 BiPredicate的使用方法及实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="consumer.html">
+            
+                <a href="consumer.html">
+            
+                    
+                    Java 8 Consumer的使用方法及实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" >
+            
+                <span>
+            
+                    
+                    Java 8 BiConsumer的使用方法及实例
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" >
+            
+                <span>
+            
+                    
+                    Java 8 Supplier的使用方法及实例
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Java 8 Predicate的使用方法及实例</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="java-8-predicate&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x53CA;&#x5B9E;&#x4F8B;">Java 8 Predicate&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x53CA;&#x5B9E;&#x4F8B;</h1>
+<p>&#x5728;Java8&#x4E2D;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html" target="_blank">Predicate</a>&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x5F0F;&#x63A5;&#x53E3;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x4E3A;T&#x7684;&#x53C2;&#x6570;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5E03;&#x5C14;&#x503C;&#xFF0C;&#x901A;&#x5E38;&#x5B83;&#x88AB;&#x4E8E;&#x8FC7;&#x6EE4;&#x51FA;&#x96C6;&#x5408;&#x4E2D;&#x6EE1;&#x8DB3;&#x4E00;&#x4E2A;&#x6761;&#x4EF6;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
+<p><strong>Predicate.java</strong></p>
+<pre class="language-"><code class="lang-java"><span class="token annotation punctuation">@FunctionalInterface</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Predicate</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token punctuation">{</span>
+  <span class="token keyword">boolean</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token class-name">T</span> t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="&#x5B9E;&#x4F8B;1&#xFF1A;&#x5728;stream&#x4E2D;&#x4F7F;&#x7528;">&#x5B9E;&#x4F8B;1&#xFF1A;&#x5728;Stream&#x4E2D;&#x4F7F;&#x7528;</h2>
+<p><code>Stream</code>&#x7684;<code>filter()</code>&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;<code>Predicate</code>&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x8FC7;&#x6EE4;&#x51FA;&#x5217;&#x8868;&#x4E2D;&#x5927;&#x4E8E;5&#x7684;&#x6570;&#x5B57;&#xFF1A;</p>
+<p><strong>Java8Predicate.java</strong></p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">package</span> <span class="token namespace">cc<span class="token punctuation">.</span>myexample<span class="token punctuation">.</span>java8</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">Arrays</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">List</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>stream</span><span class="token punctuation">.</span><span class="token class-name">Collectors</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Java8Predicate</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> list <span class="token operator">=</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// &#x8FC7;&#x6EE4;&#x51FA;list&#x4E2D;x&#x5927;&#x4E8E;5&#x7684;&#x5143;&#x7D20;</span>
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> collect <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>x <span class="token operator">-&gt;</span> x <span class="token operator">&gt;</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">collect</span><span class="token punctuation">(</span><span class="token class-name">Collectors</span><span class="token punctuation">.</span><span class="token function">toList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>collect<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [6, 7, 8, 9, 10]</span>
+
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre>
+<p><strong>&#x8F93;&#x51FA;</strong></p>
+<pre class="language-"><code>[6, 7, 8, 9, 10]
+</code></pre><h2 id="&#x5B9E;&#x4F8B;2&#xFF1A;&#x4F7F;&#x7528;predicateand&#x7EC4;&#x5408;&#x4E24;&#x4E2A;predicate">&#x5B9E;&#x4F8B;2&#xFF1A;&#x4F7F;&#x7528;Predicate.and()&#x7EC4;&#x5408;&#x4E24;&#x4E2A;Predicate</h2>
+<p><code>Predicate.and()</code>&#x5BF9;&#x4E24;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;<code>Predicate</code>&#x4F7F;&#x7528;&#x903B;&#x8F91;&#x4E0E;&#x5173;&#x7CFB;&#x8FDB;&#x884C;&#x7EC4;&#x5408;&#x3002;</p>
+<p>&#x5148;&#x6765;&#x770B;&#x4E00;&#x4E0B;&#x4E0D;&#x4F7F;&#x7528;<code>Predicate.and()</code>&#x600E;&#x4E48;&#x505A;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x8FC7;&#x6EE4;&#x51FA;&#x5217;&#x8868;&#x4E2D;&#x5927;&#x4E8E;5&#x4F46;&#x662F;&#x5C0F;&#x4E8E;8&#x7684;&#x6570;&#x5B57;&#xFF1A;</p>
+<p><strong>Java8Predicate2.java</strong></p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">package</span> <span class="token namespace">cc<span class="token punctuation">.</span>myexample<span class="token punctuation">.</span>java8</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">Arrays</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">List</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>stream</span><span class="token punctuation">.</span><span class="token class-name">Collectors</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Java8Predicate2</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> list <span class="token operator">=</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// &#x8FC7;&#x6EE4;&#x51FA;list&#x4E2D;&#x5927;&#x4E8E;5&#x4E14;&#x5C0F;&#x4E8E;8&#x7684;&#x6570;&#x5B57;</span>
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> collect <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>x <span class="token operator">-&gt;</span> x <span class="token operator">&gt;</span> <span class="token number">5</span> <span class="token operator">&amp;&amp;</span> x <span class="token operator">&lt;</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">collect</span><span class="token punctuation">(</span><span class="token class-name">Collectors</span><span class="token punctuation">.</span><span class="token function">toList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>collect<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre>
+<p><strong>&#x8F93;&#x51FA;</strong></p>
+<pre class="language-"><code>[6, 7]
+</code></pre><p>&#x518D;&#x6765;&#x770B;&#x4E0B;&#x4F7F;&#x7528;<code>Predicate.and()</code>&#x600E;&#x4E48;&#x505A;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x8FC7;&#x6EE4;&#x51FA;&#x5217;&#x8868;&#x4E2D;&#x5927;&#x4E8E;5&#x4F46;&#x662F;&#x5C0F;&#x4E8E;8&#x7684;&#x6570;&#x5B57;&#xFF1A;</p>
+<p><strong>Java8Predicate2.java</strong></p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">package</span> <span class="token namespace">cc<span class="token punctuation">.</span>myexample<span class="token punctuation">.</span>java8</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">Arrays</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">List</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>function</span><span class="token punctuation">.</span><span class="token class-name">Predicate</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>stream</span><span class="token punctuation">.</span><span class="token class-name">Collectors</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Java8Predicate2</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token comment">// &#x8FC7;&#x6EE4;&#x5927;&#x4E8E;5&#x7684;&#x6570;&#x5B57;</span>
+        <span class="token class-name">Predicate</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> noGreaterThan5 <span class="token operator">=</span> x <span class="token operator">-&gt;</span> x <span class="token operator">&gt;</span> <span class="token number">5</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x8FC7;&#x6EE4;&#x5C0F;&#x4E8E;8&#x7684;&#x6570;&#x5B57;</span>
+        <span class="token class-name">Predicate</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> noLessThan8 <span class="token operator">=</span> x <span class="token operator">-&gt;</span> x <span class="token operator">&lt;</span> <span class="token number">8</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> list <span class="token operator">=</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> collect <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>noGreaterThan5<span class="token punctuation">.</span><span class="token function">and</span><span class="token punctuation">(</span>noLessThan8<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// &#x7EC4;&#x5408;&#x4E24;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;Predicate</span>
+                <span class="token punctuation">.</span><span class="token function">collect</span><span class="token punctuation">(</span><span class="token class-name">Collectors</span><span class="token punctuation">.</span><span class="token function">toList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>collect<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre>
+<p><strong>&#x8F93;&#x51FA;</strong></p>
+<pre class="language-"><code>[6, 7]
+</code></pre><h2 id="&#x5B9E;&#x4F8B;3&#xFF1A;&#x4F7F;&#x7528;predicateor&#x7EC4;&#x5408;&#x4E24;&#x4E2A;predicate">&#x5B9E;&#x4F8B;3&#xFF1A;&#x4F7F;&#x7528;Predicate.or()&#x7EC4;&#x5408;&#x4E24;&#x4E2A;Predicate</h2>
+<p><code>Predicate.and()</code>&#x5BF9;&#x4E24;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;<code>Predicate</code>&#x4F7F;&#x7528;&#x903B;&#x8F91;&#x6216;&#x5173;&#x7CFB;&#x8FDB;&#x884C;&#x7EC4;&#x5408;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x627E;&#x51FA;&#x5217;&#x8868;&#x4E2D;&#x957F;&#x5EA6;&#x7B49;&#x4E8E;3&#x6216;&#x8005;&#x4EE5;&#x201C;A&#x201D;&#x5F00;&#x5934;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF1A;</p>
+<p><strong>Java8Predicate3.java</strong></p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>mkyong<span class="token punctuation">.</span>java8</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">Arrays</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">List</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>function</span><span class="token punctuation">.</span><span class="token class-name">Predicate</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>stream</span><span class="token punctuation">.</span><span class="token class-name">Collectors</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Java8Predicate3</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token comment">// &#x5B57;&#x7B26;&#x4E32;&#x957F;&#x5EA6;&#x7B49;&#x4E8E;3&#x7684;&#x60C5;&#x51B5;</span>
+        <span class="token class-name">Predicate</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> lengthIs3 <span class="token operator">=</span> x <span class="token operator">-&gt;</span> x<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x5B57;&#x7B26;&#x4E32;&#x4EE5;A&#x5F00;&#x5934;&#x7684;&#x60C5;&#x51B5;</span>
+        <span class="token class-name">Predicate</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> startWithA <span class="token operator">=</span> x <span class="token operator">-&gt;</span> x<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">&quot;A&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> list <span class="token operator">=</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span><span class="token string">&quot;A&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;AA&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;AAA&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;B&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;BB&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;BBB&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> collect <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>lengthIs3<span class="token punctuation">.</span><span class="token function">or</span><span class="token punctuation">(</span>startWithA<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// &#x7EC4;&#x5408;&#x4E24;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;Predicate</span>
+                <span class="token punctuation">.</span><span class="token function">collect</span><span class="token punctuation">(</span><span class="token class-name">Collectors</span><span class="token punctuation">.</span><span class="token function">toList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>collect<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre>
+<p><strong>&#x8F93;&#x51FA;</strong></p>
+<pre class="language-"><code>[A, AA, AAA, BBB]
+</code></pre><h2 id="&#x5B9E;&#x4F8B;4&#xFF1A;&#x4F7F;&#x7528;predicatenegate&#x5BF9;predicate&#x53D6;&#x53CD;">&#x5B9E;&#x4F8B;4&#xFF1A;&#x4F7F;&#x7528;Predicate.negate()&#x5BF9;Predicate&#x53D6;&#x53CD;</h2>
+<p><code>Predicate.negate()</code>&#x53EF;&#x4EE5;&#x5BF9;&#x4E00;&#x4E2A;<code>Predicate</code>&#x5B9E;&#x73B0;&#x903B;&#x8F91;&#x53D6;&#x53CD;&#x7684;&#x6548;&#x679C;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x627E;&#x51FA;&#x5217;&#x8868;&#x4E2D;&#x4E0D;&#x662F;&#x4EE5;&#x201C;A&#x201D;&#x5F00;&#x5934;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
+<p><strong>Java8Predicate4.java</strong></p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">package</span> <span class="token namespace">cc<span class="token punctuation">.</span>myexample<span class="token punctuation">.</span>java8</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">Arrays</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">List</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>function</span><span class="token punctuation">.</span><span class="token class-name">Predicate</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>stream</span><span class="token punctuation">.</span><span class="token class-name">Collectors</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Java8Predicate4</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token class-name">Predicate</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> startWithA <span class="token operator">=</span> x <span class="token operator">-&gt;</span> x<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">&quot;A&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> list <span class="token operator">=</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span><span class="token string">&quot;A&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;AA&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;AAA&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;B&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;BB&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;BBB&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> collect <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>startWithA<span class="token punctuation">.</span><span class="token function">negate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">collect</span><span class="token punctuation">(</span><span class="token class-name">Collectors</span><span class="token punctuation">.</span><span class="token function">toList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>collect<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre>
+<p><strong>&#x8F93;&#x51FA;</strong></p>
+<pre class="language-"><code>[B, BB, BBB]
+</code></pre><h2 id="&#x5B9E;&#x4F8B;5&#xFF1A;&#x4F7F;&#x7528;predicatetest">&#x5B9E;&#x4F8B;5&#xFF1A;&#x4F7F;&#x7528;Predicate.test()</h2>
+<p><strong>Java8Predicate5.java</strong></p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">package</span> <span class="token namespace">cc<span class="token punctuation">.</span>myexample<span class="token punctuation">.</span>java8</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">Arrays</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">List</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>function</span><span class="token punctuation">.</span><span class="token class-name">Predicate</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>stream</span><span class="token punctuation">.</span><span class="token class-name">Collectors</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Java8Predicate5</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> list <span class="token operator">=</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span><span class="token string">&quot;A&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;AA&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;AAA&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;B&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;BB&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;BBB&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">StringProcessor</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>
+                list<span class="token punctuation">,</span> x <span class="token operator">-&gt;</span> x<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">&quot;A&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                    <span class="token comment">// [A, AA, AAA]</span>
+
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">StringProcessor</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>
+                list<span class="token punctuation">,</span> x <span class="token operator">-&gt;</span> x<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">&quot;A&quot;</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> x<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [AAA]</span>
+
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">StringProcessor</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> <span class="token function">filter</span><span class="token punctuation">(</span><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> list<span class="token punctuation">,</span> <span class="token class-name">Predicate</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> predicate<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// &#x4E0B;&#x9762;&#x8FD9;&#x4E24;&#x6761;&#x8BED;&#x53E5;&#x662F;&#x7B49;&#x4EF7;&#x7684;</span>
+        <span class="token comment">// return list.stream().filter(predicate).collect(Collectors.toList());</span>
+        <span class="token keyword">return</span> list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>predicate<span class="token operator">::</span><span class="token function">test</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">collect</span><span class="token punctuation">(</span><span class="token class-name">Collectors</span><span class="token punctuation">.</span><span class="token function">toList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><strong>&#x8F93;&#x51FA;</strong></p>
+<pre class="language-"><code>[A, AA, AAA]
+[AAA]
+</code></pre><h2 id="&#x5B9E;&#x4F8B;6&#xFF1A;&#x4E32;&#x8054;predicate">&#x5B9E;&#x4F8B;6&#xFF1A;&#x4E32;&#x8054;Predicate</h2>
+<p><strong>Java8Predicate6.java</strong></p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">package</span> <span class="token namespace">cc<span class="token punctuation">.</span>myexample<span class="token punctuation">.</span>java8</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>function</span><span class="token punctuation">.</span><span class="token class-name">Predicate</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Java8Predicate6</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token class-name">Predicate</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> startWithA <span class="token operator">=</span> x <span class="token operator">-&gt;</span> x<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">&quot;a&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// &#x4EE5;a&#x6216;m&#x5F00;&#x59CB;&#x7684;&#x5B57;&#x7B26;&#x4E32;</span>
+        <span class="token keyword">boolean</span> result <span class="token operator">=</span> startWithA<span class="token punctuation">.</span><span class="token function">or</span><span class="token punctuation">(</span>x <span class="token operator">-&gt;</span> x<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">&quot;m&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">&quot;mkyong&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// true</span>
+
+        <span class="token comment">// &#x5B57;&#x7B26;&#x4E32;&#x4E0D;&#x4EE5;a&#x5F00;&#x59CB;&#x4E14;&#x957F;&#x5EA6;&#x4E0D;&#x7B49;&#x4E8E;3</span>
+        <span class="token keyword">boolean</span> result2 <span class="token operator">=</span> startWithA<span class="token punctuation">.</span><span class="token function">and</span><span class="token punctuation">(</span>x <span class="token operator">-&gt;</span> x<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">negate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">&quot;abc&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>result2<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// false</span>
+
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre>
+<p><strong>&#x8F93;&#x51FA;</strong></p>
+<pre class="language-"><code>true
+false
+</code></pre>
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="unary-operator.html" class="navigation navigation-prev " aria-label="Previous page: Java 8 UnaryOperator的使用方法及实例">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="bi-predicate.html" class="navigation navigation-next " aria-label="Next page: Java 8 BiPredicate的使用方法及实例">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Java 8 Predicate的使用方法及实例","level":"2.5","depth":1,"next":{"title":"Java 8 BiPredicate的使用方法及实例","level":"2.6","depth":1,"path":"functional-interface/bi-predicate.md","ref":"functional-interface/bi-predicate.md","articles":[]},"previous":{"title":"Java 8 UnaryOperator的使用方法及实例","level":"2.4","depth":1,"path":"functional-interface/unary-operator.md","ref":"functional-interface/unary-operator.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-lunr","-highlight","-sharing","-search","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-material-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java8教程","gitbook":"*"},"file":{"path":"functional-interface/predicate.md","mtime":"2020-03-07T05:37:31.765Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-07T06:02:54.192Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+
+        <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    </body>
+</html>
+

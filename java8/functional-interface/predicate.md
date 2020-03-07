@@ -1,6 +1,6 @@
 # Java 8 Predicate的使用方法及实例
 
-在Java8中[Predicate](https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html)是一个函数式接口，它可以接受一个类型为T的参数并返回一个布尔值，通常它被于过滤出集合中满足一个条件的对象。
+在Java8中[Predicate](https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html)是一个函数式接口，它可以接受一个类型为T的参数并返回一个布尔值，通常它被用于过滤出集合中满足条件的对象。
 
 **Predicate.java**
 ```java
