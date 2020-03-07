@@ -1,5 +1,6 @@
 {
-    "title": "目录",
+    "title": "全部教程",
+    "description": "MyExample是一份开源的编程参考文档",
     "plugins" : [
         "-fontsettings",
         "-search",
