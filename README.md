@@ -9,7 +9,7 @@
 + 函数式接口
   + [Java 8 Function的使用方法及实例](java8/functional-interface/function.md)
   + [Java 8 BiFunction的使用方法及实例](java8/functional-interface/bi-function.md)
-  + Java 8 BinaryOperator的使用方法及实例
+  + [Java 8 BinaryOperator的使用方法及实例](java8/functional-interface/binary-operator.md)
   + Java 8 UnaryOperator的使用方法及实例
   + Java 8 Predicate的使用方法及实例
   + Java 8 BiPredicate的使用方法及实例
