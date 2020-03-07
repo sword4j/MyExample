@@ -1,6 +1,6 @@
 {
     "title": "全部教程",
-    "description": "MyExample是一份开源的编程参考文档",
+    "description": "MyExample(www.myexample.cc)提供了一些基础的编程实例供大家参考。",
     "plugins" : [
         "-fontsettings",
         "-search",
