@@ -1,5 +1,5 @@
 # Java 8 BiPredicate的使用方法及实例
-在Java8中[BiPredicate](https://docs.oracle.com/javase/8/docs/api/java/util/function/BiPredicate.html)是一个函数式接口，它可以接受两个参数然后返回一个布尔值。`BiPredicate`与[Predicate](predicate.md)有点相似，但`Predicate`只能接受一个参数。
+在Java8中[BiPredicate](https://docs.oracle.com/javase/8/docs/api/java/util/function/BiPredicate.html)是一个函数式接口，它可以接受两个参数并返回一个布尔值。`BiPredicate`与[Predicate](predicate.md)有点相似，但`Predicate`只能接受一个参数。
 
 **BiPredicate.java**
 

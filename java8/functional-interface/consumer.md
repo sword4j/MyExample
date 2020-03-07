@@ -1,5 +1,5 @@
 # Java 8 Consumer的使用方法及实例
-在Java8中，[Consumer](https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html)是一个函数式接口，它接受一个参数。
+在Java8中，[Consumer](https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html)是一个函数式接口，它接受只一个参数，没有返回值。
 
 **Consumer.java**
 ```java
